@@ -1,10 +1,11 @@
+import { css } from '@emotion/react';
 import {
   decrement,
   increment,
   resetCounter,
-  selectCounter,
-} from "../redux/slices/couterSlice";
-import { useAppDispatch, useAppSelector } from "../redux/store";
+  selectCounter
+} from '../redux/slices/couterSlice';
+import { useAppDispatch, useAppSelector } from '../redux/store';
 
 const Counter = () => {
   const counter = useAppSelector(selectCounter);
@@ -12,7 +13,13 @@ const Counter = () => {
 
   return (
     <div>
-      <h1>{counter}</h1>
+      <h1
+        css={css`
+          color: red;
+        `}
+      >
+        {counter}
+      </h1>
       <button
         onClick={() => {
           dispatch(increment());
